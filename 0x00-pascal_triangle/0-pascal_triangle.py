@@ -1,10 +1,14 @@
+#!/usr/bin/python3
+
 def pascal_triangle(n):
+    
     """
     Prints an array of Pascal's triangle.
 
     Args:
       n: The number of rows in the triangle.
     """
+    
     if n <= 0:
         return []
 
