@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 """ Module to find generate Pascals in an array"""
+
+
 def pascal_triangle(n):
     """
     function to find pascals triangle
-    
+
         Parameters:
             n(int): numbers of rows to generate
 
         Return:
             triangle: pascal_triangle in an array
     """
-    
+
     if n <= 0:
         return []
 
@@ -22,4 +24,3 @@ def pascal_triangle(n):
         row.append(1)
         triangle.append(row)
     return triangle
-
