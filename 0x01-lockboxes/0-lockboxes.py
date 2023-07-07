@@ -1,21 +1,24 @@
-#!/usr/bin/python3
-"""lockboxes"""
-
 def canUnlockAll(boxes):
-  """
-  Determine if all the boxes can be opened then
-  Return
-    True
-  otherwise
-  Return
-    False
+    """
+    Determines if all the boxes can be opened.
 
-  """
+    Args:
+        boxes (list): A list of lists representing the boxes and their keys.
 
-  for i in range(len(boxes)):
-    for j in range(i):
-      if boxes[i][j] == index(boxes[i][j+1]):
-        return True
-      else:
-        return False
+    Returns:
+        bool: True if all boxes can be opened, False otherwise.
+    """
 
+    num_boxes = len(boxes)
+    visited = [False] * num_boxes
+    visited[0] = True
+    stack = [0]  # Start with the first box
+
+    while stack:
+        current_box = stack.pop()
+        for key in boxes[current_box]:
+            if key < num_boxes and not visited[key]:
+                visited[key] = True
+                stack.append(key)
+
+    return all(visited)
