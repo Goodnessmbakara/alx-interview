@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+
+"""Contains a nice function"""
+
 def canUnlockAll(boxes):
     """
     Determines if all the boxes can be opened.
